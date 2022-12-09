@@ -28,8 +28,6 @@ spec:
       containers:
       - name: nginx
         image: nginx:1.22.0
-        ports:
-        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
