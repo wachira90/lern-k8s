@@ -20,7 +20,8 @@ metadata:
   namespace: develop
   labels:
     environment: production
-    app: nginx  
+    app: nginx
+    company: example1
 spec:
   replicas: 2
   selector:
@@ -43,6 +44,7 @@ metadata:
   labels:
     environment: production
     app: nginx
+    company: example1
 spec:
   type: NodePort
   selector:
