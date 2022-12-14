@@ -71,4 +71,10 @@ http://192.168.49.2:30002
 docker@gp65-leopard:~/kwww$
 ````
 
+## minikube images
 
+````
+minikube image pull wachira90/php:7.4
+
+minikube image pull nginx:1.22.0
+````
