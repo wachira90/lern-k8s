@@ -18,6 +18,9 @@ kind: Deployment
 metadata:
   name: nginx-deployment
   namespace: develop
+  labels:
+    environment: production
+    app: nginx  
 spec:
   replicas: 2
   selector:
@@ -37,6 +40,9 @@ kind: Service
 metadata:
   name: nginx-client-service
   namespace: develop
+  labels:
+    environment: production
+    app: nginx
 spec:
   type: NodePort
   selector:
