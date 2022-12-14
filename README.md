@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-client-service
+  name: nginx-service
   namespace: develop
   labels:
     environment: production
