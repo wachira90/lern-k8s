@@ -19,7 +19,7 @@ metadata:
   name: nginx-deployment
   namespace: develop
   labels:
-    environment: production
+    environment: develop
     app: nginx
     company: example1
 spec:
@@ -42,7 +42,7 @@ metadata:
   name: nginx-service
   namespace: develop
   labels:
-    environment: production
+    environment: develop
     app: nginx
     company: example1
 spec:
