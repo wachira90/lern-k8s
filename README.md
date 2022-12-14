@@ -8,6 +8,8 @@ kubectl get all
 ````
 ## test 
 
+kubectl create ns develop
+
 nano nginx-1.22.yml
 
 ````
@@ -15,7 +17,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  namespace: develop
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -33,6 +37,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx-client-service
+  namespace: develop
 spec:
   type: NodePort
   selector:
@@ -41,4 +46,22 @@ spec:
     - port: 80
       targetPort: 80
       nodePort: 30002
-````      
+````
+
+## run 
+
+````
+kubectl apply -f nginx-1.22.yml
+````
+
+## mikube get url access
+
+minikube service www-service --url -n develop
+
+````
+docker@gp65-leopard:~/kwww$ minikube service www-service --url -n develop
+http://192.168.49.2:30002
+docker@gp65-leopard:~/kwww$
+````
+
+
