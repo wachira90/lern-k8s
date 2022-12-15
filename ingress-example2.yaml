@@ -7,20 +7,20 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: example1.com
+    - host: app.inno.local
       http:
         paths:
           - path: /api/graphql
             pathType: Prefix
             backend:
               service:
-                name: server-service
+                name: api-service
                 port:
                   number: 80
-          - path: /?(.*)
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: client-service
+                name: www-service
                 port:
                   number: 80
