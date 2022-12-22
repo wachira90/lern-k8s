@@ -80,3 +80,28 @@ minikube image pull nginx:1.22.0
 
 minikube image ls --format table
 ````
+
+## tip powershell for run command 
+
+start 0
+
+````
+PS C:\WINDOWS\system32> for($x=0; $x -lt 4; $x=$x+1) { echo $x }
+0
+1
+2
+3
+PS C:\WINDOWS\system32>
+````
+
+start 1
+
+````
+PS C:\WINDOWS\system32> for($x=1; $x -lt 5; $x=$x+1) { echo $x }
+1
+2
+3
+4
+PS C:\WINDOWS\system32>
+````
+
