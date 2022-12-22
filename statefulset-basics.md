@@ -137,3 +137,11 @@ C:\minikube\deploy\test001>
 ````
 kubectl delete -f stateful.yml
 ````
+
+## check ingress 
+
+````
+C:\minikube\deploy\test001>kubectl get ing ingress-test -n test
+NAME           CLASS   HOSTS           ADDRESS        PORTS   AGE
+ingress-test   nginx   app.inno.test   192.168.6.12   80      13m
+````
