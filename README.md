@@ -77,4 +77,6 @@ docker@gp65-leopard:~/kwww$
 minikube image pull wachira90/php:7.4
 
 minikube image pull nginx:1.22.0
+
+minikube image ls --format table
 ````
