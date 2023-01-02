@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-autoscaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 50
+# This configuration will create an Autoscaler resource that scales the my-app-deployment deployment in the default namespace. The number of replicas in the deployment will be increased or decreased based on the average CPU utilization of the pods in the deployment, with a minimum of 1 replica and a maximum of 10 replicas. If the average CPU utilization of the pods exceeds 50%, the Autoscaler will increase the number of replicas to try to bring the utilization down. If the utilization falls below 50%, the Autoscaler will decrease the number of replicas.
